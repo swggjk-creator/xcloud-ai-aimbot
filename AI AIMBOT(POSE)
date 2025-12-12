@@ -3,18 +3,18 @@
         detection: {
             enabled: true,
             betterDetection: {
-                enabled: true // allows the AI to see outside of the FOV making detection better at longer ranges and better overall
+                enabled: false // allows the AI to see outside of the FOV making detection better at longer ranges and better overall
             },
             modelType: poseDetection.SupportedModels.MoveNet,
             detectorConfig: {
-                modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING, // if the detection sucks so bad despite betterdetection pls use THUNDER instead of LIGHTNING it uses a bigger dataset
+                modelType: poseDetection.movenet.modelType.SINGLEPOSE_THUNDER, // if the detection sucks so bad despite betterdetection pls use THUNDER instead of LIGHTNING it uses a bigger dataset
                 enableSmoothing: true,
-                minPoseScore: 0.25 // low confidences for the sake of getting a detection out of lighting if you use thunder it can see through walls better and u can use 0.35 and still get a detection and lesser false positives
+                minPoseScore: 0.35 // low confidences for the sake of getting a detection out of lighting if you use thunder it can see through walls better and u can use 0.35 and still get a detection and lesser false positives
             },
             keypointConfidence: 0.20,
-            maxDetections: 5,
+            maxDetections: 1,
             processingInterval: 5,
-            skipFrames: 2, // gives more fps for a more consistent aimbot but skips frames, if your detection speed is like 50 ms and below u probably wont feel the frameskip and it will just feel like you got a fps boost
+            skipFrames: 5, // gives more fps for a more consistent aimbot but skips frames, if your detection speed is like 50 ms and below u probably wont feel the frameskip and it will just feel like you got a fps boost
             ignoreSelfRegion: {
                 enabled: true,
                 xPercent: 0.00,
